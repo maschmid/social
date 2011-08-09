@@ -50,6 +50,7 @@ public class MultiServicesManagerImpl implements MultiServicesManager, Serializa
     @PostConstruct
     void init() {
         listOfServices = new ArrayList<String>(socialConfig.getSocialRelated());
+        services = new HashSet<OAuthService>();
     }
 
     /*
@@ -60,11 +61,6 @@ public class MultiServicesManagerImpl implements MultiServicesManager, Serializa
     @Override
     public List<String> getListOfServices() {
         return listOfServices;
-    }
-
-    public MultiServicesManagerImpl() {
-        super();
-        services = new HashSet<OAuthService>();
     }
 
     /*
